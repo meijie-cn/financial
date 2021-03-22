@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Stocks {% endblock title %}
+
+{% block content %}
+
+<!-- Header -->
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" 
+	 style="min-height: 600px; background-image: url(/static/assets/img/theme/stock-cover.jpg); background-size: cover; background-position: center top;">
+	<!-- Mask -->
+	<span class="mask bg-gradient-default opacity-8"></span>
+	<!-- Header container -->
+	<form method="POST">
+	{% csrf_token %}
+		<div class="container-fluid d-flex align-items-center">
+			<div class="row">
+				<div class="col">
+					<input type="submit" name="refresh-stock" class="btn btn-info" value="Refresh Stock Info">
+				</div>
+				<div class="col">
+					<input type="submit" name="refresh-trends" class="btn btn-info" value="Refresh Stock Trends">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="container-fluid mt--7">
+	<div class="row">
+
+	</div>
+
+	{% include "includes/footer.html" %}
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}
